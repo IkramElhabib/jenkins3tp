@@ -16,7 +16,7 @@ pipeline {
     }
     stage("Generate backend image") {
     steps {
-        dir("backend-master") {
+        dir("jenkins3tp") {
             sh "mvn clean install"
             sh "docker build -t backend ."
         }
@@ -24,7 +24,7 @@ pipeline {
 }
 stage("Run docker compose") {
     steps {
-        dir("backend-master") {
+        dir("jenkins3tp") {
             sh "docker-compose up -d"
         }
     }
