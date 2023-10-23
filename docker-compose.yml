@@ -1,6 +1,4 @@
 services:
-
-# Spring Boot Application
   spring-boot-app:
     image: backend
     ports:
@@ -14,7 +12,6 @@ services:
     depends_on:
       - mysql
 
-  # MySQL Database
   mysql:
     image: mysql:5.7
     restart: always
@@ -26,4 +23,3 @@ services:
       - '0.0.0.0:3306:3306'
     volumes:
       - api_etudiant:/var/lib/mysql
-  # liste des volumes
